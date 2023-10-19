@@ -16,6 +16,8 @@ import static org.junit.Assert.assertEquals;
 
 public class WireMockJnitExample {
 
+//    WireMock is a library for stubbing and mocking HTTP services for testing purposes.
+//    You can use it with JUnit to create and manage mock HTTP endpoints during your unit tests
     private WireMockServer wireMockServer;
 
     @Before
@@ -49,6 +51,13 @@ public class WireMockJnitExample {
         String responseBody = EntityUtils.toString(response.getEntity());
         assertEquals("Mocked Response", responseBody);
     }
+
+//    In this example, we create a WireMockServer instance in the setup method and configure it to stub a specific endpoint (/example) with a mock response.
+//    We use JUnit's @Before annotation to start the server before the tests and @After annotation to stop it after the tests.
+//    Finally, in the testMockedEndpoint method, we make an HTTP request to the mock endpoint and assert that the response matches our expectations.
+
+
+
 //    @ClassRule
 //    public static WireMockClassRule wireMockRule = new WireMockClassRule(8082);
 //
